@@ -7,6 +7,8 @@ int b;
 
 int numero, opcion=1;
 
+float numero2 = 0, ingreso1, ingreso2;
+
 string entrada;
 
 a = 10;
@@ -150,3 +152,64 @@ float Dividir()
     System.Console.WriteLine(numero1 / numero2);
     return (numero1 / numero2);
 }
+
+/*
+Ejercicio 3. Ingrese al Branch CalculadoraV2 para implementar las mejoras en la
+calculadora.. Solicite al usuario un número y muestre por pantalla:
+
+● El valor absoluto de un número
+● El cuadrado
+● La raíz cuadrada
+● El seno
+● El Coseno
+● La parte entera de un tipo float.
+
+
+Luego de esto, solicite dos números al usuario y determine:
+● El Máximo entre los dos números
+● El Mínimo entre los dos números
+Para TODOS los casos, no olvide contemplar siempre el caso de que el usuario no
+ingrese un número válido
+*/
+
+bool cond = false;
+
+while (!cond)
+{
+    Console.WriteLine("\n\nIngrese un numero para obtener datos: ");
+    entrada = Console.ReadLine();
+    cond = float.TryParse(entrada, out numero2);
+}
+System.Console.WriteLine("Numero: " + numero2);
+Console.WriteLine("Valor absoluto: " + float.Abs(numero2));
+Console.WriteLine("Cuadrado: " + (numero2 * numero2));
+
+if (numero2 < 0)
+{
+    System.Console.WriteLine("No se puede representar la raiz: ");
+    Console.WriteLine("Parte entera: " + float.Ceiling(numero2));
+}
+else
+{
+    Console.WriteLine("Raiz Cuadrada: " + float.Sqrt(numero2));
+    Console.WriteLine("Parte entera: " + float.Floor(numero2));
+}
+
+Console.WriteLine("Seno del numero: " + float.Sin(numero2));
+Console.WriteLine("Coseno del numero: " + float.Cos(numero2));
+
+
+do
+{
+    Console.WriteLine("Ingresa el primer numero: ");
+    entrada = Console.ReadLine();
+} while (!(float.TryParse(entrada, out ingreso1)));
+
+do
+{
+    Console.WriteLine("Ingresa el segundo numero: ");
+    entrada = Console.ReadLine();
+} while (!(float.TryParse(entrada, out ingreso2)));
+
+System.Console.WriteLine("Maximo entre ambos: "+ float.Max(ingreso1, ingreso2));
+System.Console.WriteLine("Minimo entre ambos: "+float.Min(ingreso1, ingreso2));

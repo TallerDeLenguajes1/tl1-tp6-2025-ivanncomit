@@ -90,8 +90,7 @@ float sumar()
         Console.WriteLine("Ingresa el segundo numero: ");
         entrada = Console.ReadLine();
     } while (!(float.TryParse(entrada, out numero2)));
-
-    System.Console.WriteLine(numero1+numero2);
+    System.Console.WriteLine($"La suma de {numero1} y {numero2} es {numero1+numero2}");
     return (numero1 + numero2);
 }
 
@@ -213,3 +212,88 @@ do
 
 System.Console.WriteLine("Maximo entre ambos: "+ float.Max(ingreso1, ingreso2));
 System.Console.WriteLine("Minimo entre ambos: "+float.Min(ingreso1, ingreso2));
+
+/*
+Realizar los siguientes ejercicios
+Dada una cadena (un string) de texto ingresada por el usuario, realice las siguientes
+tarea:
+● Obtener la longitud de la cadena y muestre por pantalla.
+● A partir de una segunda cadena ingresada por el usuario, concatene ambas
+cadenas distintas.
+● Extraer una subcadena de la cadena ingresada.
+● Utilizando la calculadora creada anteriormente realizar las operaciones de dos
+números y mostrar por pantalla y mostrar en texto el resultado. Por ejemplo para
+la suma sería:
+“la suma de “ num1 “ y de” num2 “ es igual a: ” resultado.
+Donde num1, num2 y resultados son los sumandos y el resultado de la operación
+respectivamente.
+Nota: Busque el comportamiento del Método ToString();
+● Recorrer la cadena de texto con un ciclo Foreach e ir mostrando elemento por
+elemento en pantalla
+● Buscar la ocurrencia de una palabra determinada en la cadena ingresada
+● Convierta la cadena a mayúsculas y luego a minúsculas.
+● Ingrese una cadena separada por caracteres que usted determine y muestre por
+pantalla los resultados (Revisar el comportamiento de split())
+● Siguiendo con el ejemplo de la calculadora (ejercicio 2) ingrese una ecuación
+simple como cadena de caracteres y que el sistema lo resuelva. Por ej. ingrese
+por pantalla “582+2” y que le devuelva la suma de 582 con 2
+
+*/
+System.Console.WriteLine("ingrese una cadena de texto: ");
+
+string cadena1 = Console.ReadLine();
+
+System.Console.WriteLine("longitud: " + cadena1.Length);
+
+System.Console.WriteLine("ingrese otra cadena: ");
+
+string cadena2 = Console.ReadLine();
+
+cadena1.Concat(cadena2);
+
+System.Console.WriteLine("Extraer sub-cadena de la concatenacion de 0 a 5: " + cadena1.Substring(0,5));
+
+Console.WriteLine(sumar());
+
+int ejemplo = 123;
+string texto = ejemplo.ToString();
+Console.WriteLine(texto);
+
+foreach (char c in cadena1)
+{
+    Console.WriteLine(c);
+}
+
+string palabra = "Taller";
+
+if (cadena1.Contains(palabra))
+    Console.WriteLine("Palabra encontrada");
+else
+    Console.WriteLine("No se encontro");
+
+System.Console.WriteLine(cadena1.ToUpper());
+System.Console.WriteLine(cadena1.ToLower());
+
+string cadenaEjemplo = "taller1;metodos1;algyed1;matdisc;ayoc";
+
+string[] cadenaSeparada = cadena1.Split(";");
+
+foreach (var materia in cadenaEjemplo)
+{
+    System.Console.WriteLine("Materia: "+ materia);
+}
+
+System.Console.WriteLine("Ingrese una ecuacion de numeros con un + entre c/u: ");
+entrada = Console.ReadLine();
+
+string[] Ecuacion = entrada.Split("+");
+
+int suma=0;
+
+foreach (var num in Ecuacion)
+{
+    suma = suma + int.Parse(num);
+}
+
+System.Console.WriteLine("El resultado es: "+ suma);
+

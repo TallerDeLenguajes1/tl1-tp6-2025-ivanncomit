@@ -6,14 +6,14 @@ int a;
 int b;
 
 int numero;
-float numero2=0;
+float numero2 = 0, ingreso1, ingreso2;
 
 string entrada;
 
 a = 10;
 b = a;
 
-Console.WriteLine("valor de a:"+a);
+Console.WriteLine("valor de a:" + a);
 Console.WriteLine("valor de b:" + b);
 
 do
@@ -70,9 +70,9 @@ while (!cond)
     entrada = Console.ReadLine();
     cond = float.TryParse(entrada, out numero2);
 }
-    System.Console.WriteLine("Numero: " + numero2);
-    Console.WriteLine("Valor absoluto: " + float.Abs(numero2));
-    Console.WriteLine("Cuadrado: " + (numero2 * numero2));
+System.Console.WriteLine("Numero: " + numero2);
+Console.WriteLine("Valor absoluto: " + float.Abs(numero2));
+Console.WriteLine("Cuadrado: " + (numero2 * numero2));
 
 if (numero2 < 0)
 {
@@ -85,5 +85,21 @@ else
     Console.WriteLine("Parte entera: " + float.Floor(numero2));
 }
 
-    Console.WriteLine("Seno del numero: " + float.Sin(numero2));
-    Console.WriteLine("Coseno del numero: " + float.Cos(numero2));
+Console.WriteLine("Seno del numero: " + float.Sin(numero2));
+Console.WriteLine("Coseno del numero: " + float.Cos(numero2));
+
+
+do
+{
+    Console.WriteLine("Ingresa el primer numero: ");
+    entrada = Console.ReadLine();
+} while (!(float.TryParse(entrada, out ingreso1)));
+
+do
+{
+    Console.WriteLine("Ingresa el segundo numero: ");
+    entrada = Console.ReadLine();
+} while (!(float.TryParse(entrada, out ingreso2)));
+
+System.Console.WriteLine("Maximo entre ambos: "+ float.Max(ingreso1, ingreso2));
+System.Console.WriteLine("Minimo entre ambos: "+float.Min(ingreso1, ingreso2));

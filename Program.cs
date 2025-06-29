@@ -145,7 +145,7 @@ float Dividir()
     {
         Console.WriteLine("Ingresa el segundo numero entero: ");
         entrada = Console.ReadLine();
-    } while (!(float.TryParse(entrada, out numero2)));
+    } while (!(float.TryParse(entrada, out numero2))&&numero2!=0);
 
     System.Console.WriteLine(numero1 / numero2);
     return (numero1 / numero2);

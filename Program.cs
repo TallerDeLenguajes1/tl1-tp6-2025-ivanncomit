@@ -9,7 +9,7 @@ int numero;
 
 string entrada;
 
-a =10;
+a = 10;
 b = a;
 
 Console.WriteLine("valor de a:"+a);
@@ -17,7 +17,7 @@ Console.WriteLine("valor de b:" + b);
 
 do
 {
-    Console.WriteLine("La cresta, ingresa un numero entero");
+    Console.WriteLine("Ingresa un numero entero: ");
     entrada = Console.ReadLine();
 } while (!(int.TryParse(entrada, out numero)));
 
